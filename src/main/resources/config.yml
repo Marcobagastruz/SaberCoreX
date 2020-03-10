@@ -1,0 +1,77 @@
+#######################################################################################
+#######################################################################################
+#######################################################################################
+#####                                                                             #####
+#####                          SaberCoreX 3.0                                     #####
+#####                        Created By Driftay                                   #####
+#####                                                                             #####
+#######################################################################################
+#######################################################################################
+#######################################################################################
+#<-------------------------------------->NOTES<-------------------------------------->#
+#All Color Codes Can Be Used!
+#Refer to: https://wiki.ess3.net/mc/
+#Enable and Disable Any Module by Simply Switching Variable to true or false!
+#<-------------------------------------->NOTES<-------------------------------------->#
+modules:
+  #Disables The Spawning Of Baby Zombies
+  anti_baby_zombie: true
+  #Disables Placement of Boats and Minecarts
+  anti_boat_minecart: true
+  #Disable Cobble Monsters
+  anti_cobble_monster: true
+  #Disables Glitching Of Creepers
+  anti_creeper_glitch: true
+  #Disables All Explosion Damage To Players
+  anti_explosion_damage: true
+  #Deny Items From Being Exploded/Burned
+  anti_item_destory: true
+  #Disables AI/Targeting of Mobs
+  anti_mob_ai: true
+  #Disables Movement of Certain Entities
+  anti_mob_movement: true
+  #Disable Spawners From Spawning In Wilderness
+  anti_wilderness_spawner: true
+  #Automatically Respawn
+  auto_respawn: true
+
+
+
+settings:
+  anti-mob-movement:
+    - 'CREEPER'
+    - 'ZOMBIE'
+    - 'GHAST'
+    - 'SPIDER'
+    - 'BLAZE'
+
+  lightning-deny:
+    - "DIAMOND_HELMET"
+    - "DIAMOND_CHESTPLATE"
+    - "DIAMOND_LEGGINGS"
+    - "DIAMOND_BOOTS"
+    - "DIAMOND_SWORD"
+    - "DIAMOND_AXE"
+    - "DIAMOND_PICKAXE"
+    - "MOB_SPAWNER"
+    - "HOPPER"
+  explosion-deny:
+    - "DIAMOND_HELMET"
+    - "DIAMOND_CHESTPLATE"
+    - "DIAMOND_LEGGINGS"
+    - "DIAMOND_BOOTS"
+    - "DIAMOND_SWORD"
+    - "DIAMOND_AXE"
+    - "DIAMOND_PICKAXE"
+    - "MOB_SPAWNER"
+    - "HOPPER"
+  burn-deny:
+    - "DIAMOND_HELMET"
+    - "DIAMOND_CHESTPLATE"
+    - "DIAMOND_LEGGINGS"
+    - "DIAMOND_BOOTS"
+    - "DIAMOND_SWORD"
+    - "DIAMOND_AXE"
+    - "DIAMOND_PICKAXE"
+    - "MOB_SPAWNER"
+    - "HOPPER"
