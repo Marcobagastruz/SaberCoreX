@@ -1,5 +1,6 @@
 package me.driftay.core;
 
+import me.driftay.core.file.impl.FileManager;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.plugins.SaberPlugins;
 import org.bukkit.Bukkit;
@@ -14,9 +15,14 @@ import java.util.HashMap;
  */
 public class SaberCore extends JavaPlugin {
 
+    private FileManager fileManager;
     public static SaberCore instance;
     public boolean shutting_down = false;
     private HashMap<String, SaberPlugin> loaded_modules = new HashMap<>();
+
+    public FileManager getFileManager() {
+        return fileManager;
+    }
 
     public static SaberCore getInstance() {
         return instance;
@@ -26,6 +32,8 @@ public class SaberCore extends JavaPlugin {
         instance = this;
         saveDefaultConfig();
         getConfig().options().copyDefaults(true);
+        fileManager = new FileManager();
+        getFileManager().setupFiles();
 
         //Register Modules Last
         Bukkit.getScheduler().runTaskLater(this, this::registerPatches, 20L);

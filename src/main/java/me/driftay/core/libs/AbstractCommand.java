@@ -108,7 +108,7 @@ public abstract class AbstractCommand implements TabExecutor {
             this.exe = exe;
         }
 
-        public boolean execute(@NotNull CommandSender sender, String commandLabel, String[] args) {
+        public boolean execute(CommandSender sender, String commandLabel, String[] args) {
             return this.exe != null && this.exe.onCommand(sender, this, commandLabel, args);
         }
 

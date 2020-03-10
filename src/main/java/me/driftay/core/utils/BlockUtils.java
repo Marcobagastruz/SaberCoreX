@@ -19,7 +19,7 @@ import java.util.Set;
 public class BlockUtils {
 
     public static List<Block> getCube(Location loc, Integer radius) {
-        List<Block> blocks = new ArrayList<Block>();
+        List<Block> blocks = new ArrayList<>();
         for (int x = radius * -1 - 1; x <= radius + 1; ++x) {
             for (int y = radius * -1; y <= radius; ++y) {
                 for (int z = radius * -1 - 1; z <= radius + 1; ++z) {
@@ -34,7 +34,7 @@ public class BlockUtils {
     }
 
     private static List<Block> getBlocks(Location base, int changeX, int changeY, int changeZ) {
-        List<Block> blocks = new ArrayList<Block>();
+        List<Block> blocks = new ArrayList<>();
         for (int x = base.getBlockX() - changeX; x <= base.getBlockX() + changeX; ++x) {
             for (int y = base.getBlockY() - changeY; y <= base.getBlockY() + changeY; ++y) {
                 for (int z = base.getBlockZ() - changeZ; z <= base.getBlockZ() + changeZ; ++z) {
@@ -83,7 +83,7 @@ public class BlockUtils {
     }
 
     public static List<Block> getSquareRaw(Block b, BlockFace face) {
-        List<Block> blocks = new ArrayList<Block>();
+        List<Block> blocks = new ArrayList<>();
         switch (face) {
             case UP:
             case DOWN: {

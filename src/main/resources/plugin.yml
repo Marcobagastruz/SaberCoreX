@@ -2,3 +2,9 @@ name: SaberCoreX
 main: me.driftay.core.SaberCore
 author: Driftay
 version: ${project.version}
+
+permissions:
+  sabercore.disabledcommands.bypass:
+    description: Bypass Disabled Commands
+  sabercore.spawnermine.bypass:
+    description: Bypass Spawner Mine Whilst Enemies Are Nearby

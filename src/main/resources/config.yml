@@ -14,36 +14,77 @@
 #Enable and Disable Any Module by Simply Switching Variable to true or false!
 #<-------------------------------------->NOTES<-------------------------------------->#
 modules:
+  #Disable Piston AutoFarms
+  anti_auto_farm: true
+
   #Disables The Spawning Of Baby Zombies
   anti_baby_zombie: true
+
   #Disables Placement of Boats and Minecarts
   anti_boat_minecart: true
+
   #Disable Cobble Monsters
   anti_cobble_monster: true
+
   #Disables Glitching Of Creepers
   anti_creeper_glitch: true
+
+  #Disables ALL FORMS Of Teleportation For Dragon Eggs
+  anti_dragonegg_teleport: true
+
   #Disables All Explosion Damage To Players
   anti_explosion_damage: true
+
   #Deny Items From Being Exploded/Burned
   anti_item_destory: true
+
   #Disables AI/Targeting of Mobs
   anti_mob_ai: true
+
   #Disables Movement of Certain Entities
   anti_mob_movement: true
+
+  #Disables Players Mining Spawners In a Configurable Radius Whilst Players Are Near
+  anti_spawner_mine: true
+
   #Disable Spawners From Spawning In Wilderness
   anti_wilderness_spawner: true
+
   #Automatically Respawn
   auto_respawn: true
 
+  #Overall Border Patches For World Border
+  border_patches: true
+
+  #Denies Users To Specific Commands
+  disabled_commands: true
+
+  #Soak Water/Lava Up With Sponges In a Configurable Radius
+  soak_sponges: true
+
+  #Soak Water/Lava Up With Spawners In a Configurable Radius
+  spawner_sponge: true
 
 
 settings:
+  sponge-radius: 3
+
+  anti-spawner-mine-radius: 80
+
   anti-mob-movement:
     - 'CREEPER'
     - 'ZOMBIE'
     - 'GHAST'
     - 'SPIDER'
     - 'BLAZE'
+
+  disabled-commands:
+    - /icanhasbukkit
+    - /ver
+    - /version
+    - /pl
+    - /?
+    - /plugins
 
   lightning-deny:
     - "DIAMOND_HELMET"
@@ -55,6 +96,7 @@ settings:
     - "DIAMOND_PICKAXE"
     - "MOB_SPAWNER"
     - "HOPPER"
+
   explosion-deny:
     - "DIAMOND_HELMET"
     - "DIAMOND_CHESTPLATE"
@@ -65,6 +107,7 @@ settings:
     - "DIAMOND_PICKAXE"
     - "MOB_SPAWNER"
     - "HOPPER"
+
   burn-deny:
     - "DIAMOND_HELMET"
     - "DIAMOND_CHESTPLATE"

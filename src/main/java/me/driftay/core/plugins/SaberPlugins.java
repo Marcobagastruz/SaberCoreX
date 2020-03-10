@@ -3,22 +3,32 @@ package me.driftay.core.plugins;
 import me.driftay.core.SaberCore;
 import me.driftay.core.modules.*;
 
+import javax.swing.border.Border;
+
 /**
  * SaberCore - Developed by Driftay.
  * All rights reserved 2020.
  * Creation Date: 3/10/2020
  */
 public enum SaberPlugins {
+
+    ANTI_AUTO_FARM(new AntiAutoFarm(SaberCore.getInstance()), "Disable Piston AutoFarms"),
     ANTI_BABY_ZOMBIE(new AntiBabyZombie(SaberCore.getInstance()), "Disables The Spawning Of Baby Zombies"),
     ANTI_BOAT_MINECART(new AntiBoatMinecart(SaberCore.getInstance()), "Disables Placement of Boats and Minecarts"),
     ANTI_COBBLE_MONSTER(new AntiCobbleMonster(SaberCore.getInstance()), "Disable Cobble Monsters"),
     ANTI_CREEPER_GLITCH(new AntiCreeperGlitch(SaberCore.getInstance()), "Disables Glitching Of Creepers"),
+    ANTI_DRAGONEGG_TELEPORT(new AntiDragonEggTeleport(SaberCore.getInstance()), "Disables ALL FORMS Of Teleportation For Dragon Eggs"),
     ANTI_EXPLOSION_DAMAGE(new AntiExplosionDamage(SaberCore.getInstance()), "Disables All Explosion Damage To Players"),
     ANTI_ITEM_DESTROY(new AntiItemDestroy(SaberCore.getInstance()), "Deny Items From Being Exploded/Burned"),
     ANTI_MOB_AI(new AntiMobAI(SaberCore.getInstance()), "Disables AI/Targeting of Mobs"),
     ANTI_MOB_MOVEMENT(new AntiMobMovement(SaberCore.getInstance()), "Disables Movement of Certain Entities"),
+    ANTI_SPAWNER_MINE(new AntiSpawnerMine(SaberCore.getInstance()), "Disables Players Mining Spawners In a Configurable Radius Whilst Players Are Near"),
     ANTI_WILDERNESS_SPAWNER(new AntiWildernessSpawner(SaberCore.getInstance()), "Disable Spawners From Spawning In Wilderness"),
-    AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn");
+    AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn"),
+    BORDER_PATCHES(new BorderPatches(SaberCore.getInstance()), "Overall Border Patches For World Border"),
+    DISABLED_COMMANDS(new DisabledCommands(SaberCore.getInstance()), "Denies Users To Specific Commands"),
+    SOAK_SPONGES(new SoakSponges(SaberCore.getInstance()), "Soak Water/Lava Up With Sponges In a Configurable Radius"),
+    SPAWNER_SPONGE(new SpawnerSponge(SaberCore.getInstance()), "Soak Water/Lava Up With Spawners In a Configurable Radius");
 
     private SaberPlugin rp;
     private String desc;
