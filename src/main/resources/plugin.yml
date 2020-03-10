@@ -1,0 +1,4 @@
+name: SaberCoreX
+main: me.driftay.core.SaberCore
+author: Driftay
+version: ${project.version}
