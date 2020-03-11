@@ -3,6 +3,20 @@ main: me.driftay.core.SaberCore
 author: Driftay
 version: ${project.version}
 
+commands:
+  saberload:
+    description: Reload Recluse Configuration
+    usage: /<command>
+    aliases: [saberreload, sreload]
+  recunregister:
+    description: Unregister a specific patch.
+    usage: /<command>
+    aliases: [saberunload, sunload]
+  saberregister:
+    description: Register a specific patch.
+    usage: /<command>
+    aliases: [saberload, sload]
+
 permissions:
   sabercore.disabledcommands.bypass:
     description: Bypass Disabled Commands

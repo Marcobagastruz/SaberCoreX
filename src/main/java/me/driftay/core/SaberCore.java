@@ -1,5 +1,8 @@
 package me.driftay.core;
 
+import me.driftay.core.commands.CommandSaberRegister;
+import me.driftay.core.commands.CommandSaberReload;
+import me.driftay.core.commands.CommandSaberUnregister;
 import me.driftay.core.file.impl.FileManager;
 import me.driftay.core.modules.chat_filter.ChatHandler;
 import me.driftay.core.plugins.SaberPlugin;
@@ -37,7 +40,7 @@ public class SaberCore extends JavaPlugin {
         fileManager = new FileManager();
         getFileManager().setupFiles();
         chatHandler = new ChatHandler();
-
+        registerCommands();
 
         //Register Modules Last
         Bukkit.getScheduler().runTaskLater(this, this::registerPatches, 20L);
@@ -47,6 +50,12 @@ public class SaberCore extends JavaPlugin {
         this.shutting_down = true;
         this.saveConfig();
         this.unregisterPatches();
+    }
+
+    private void registerCommands(){
+        getCommand("saberload").setExecutor(new CommandSaberReload(this));
+        getCommand("saberregister").setExecutor(new CommandSaberRegister(this));
+        getCommand("saberunregister").setExecutor(new CommandSaberUnregister(this));
     }
 
     public boolean registerPatch(SaberPlugin ap) {
