@@ -8,7 +8,7 @@ commands:
     description: Reload Recluse Configuration
     usage: /<command>
     aliases: [saberreload, sreload]
-  recunregister:
+  saberunregister:
     description: Unregister a specific patch.
     usage: /<command>
     aliases: [saberunload, sunload]
