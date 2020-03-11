@@ -92,6 +92,13 @@ settings:
 
   anti-spawner-mine-radius: 80
 
+  bank-notes:
+    item-type: PAPER
+    display-name: '&b&lBank Note &7(Right Click)'
+    lore:
+      - '&5Value: &f{value}'
+      - '&5Signer: &7{signer}'
+
   denied-storage:
     - 'SPAWNER'
 

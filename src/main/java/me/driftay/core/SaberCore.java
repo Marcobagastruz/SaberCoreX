@@ -7,7 +7,9 @@ import me.driftay.core.file.impl.FileManager;
 import me.driftay.core.modules.chat_filter.ChatHandler;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.plugins.SaberPlugins;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -21,6 +23,7 @@ public class SaberCore extends JavaPlugin {
 
     public static SaberCore instance;
     public boolean shutting_down = false;
+    private static Economy economy = null;
     private FileManager fileManager;
     private ChatHandler chatHandler;
     private HashMap<String, SaberPlugin> loaded_modules = new HashMap<>();
@@ -40,6 +43,7 @@ public class SaberCore extends JavaPlugin {
         fileManager = new FileManager();
         getFileManager().setupFiles();
         chatHandler = new ChatHandler();
+        setupEconomy();
         registerCommands();
 
         //Register Modules Last
@@ -100,4 +104,14 @@ public class SaberCore extends JavaPlugin {
         return chatHandler;
     }
 
+    public static Economy getEconomy(){
+        return economy;
+    }
+
+
+    private boolean setupEconomy(){
+        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+        if (economyProvider != null) economy = economyProvider.getProvider();
+        return (economy != null);
+    }
 }
