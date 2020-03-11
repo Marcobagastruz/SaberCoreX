@@ -3,6 +3,7 @@ package me.driftay.core.modules;
 import me.driftay.core.SaberCore;
 import me.driftay.core.libs.SaberPluginListener;
 import me.driftay.core.plugins.SaberPlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.*;
 import org.bukkit.entity.Player;
@@ -92,8 +93,11 @@ public class ArmorSwap extends SaberPlugin {
 
             Player p = e.getPlayer();
 
-            long dif = System.currentTimeMillis() -  p.getMetadata("lastArmorSwap").get(0).asLong();
-            if (p.hasMetadata("lastArmorSwap") && dif < 2 * 1000) return;
+            if (p.hasMetadata("lastArmorSwap")){
+                long dif = System.currentTimeMillis() - p.getMetadata("lastArmorSwap").get(0).asLong();
+                if(dif < SaberCore.getInstance().getConfig().getLong("settings.armor-swap.cooldown"))
+                return;
+            }
 
             if (e.isCancelled() && p.hasMetadata("noArmorSwap")) return;
 

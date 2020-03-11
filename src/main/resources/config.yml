@@ -98,6 +98,9 @@ settings:
 
   anti-spawner-mine-radius: 80
 
+  armor-swap:
+    cooldown: 500 #This is in Milliseconds - 500 = .5 seconds
+
   max-fly-height:
     limit: 255.5
     damage-player: true #Will Damage The Player For 1/2 a Heart
