@@ -71,6 +71,9 @@ modules:
   #Denies Users To Specific Commands
   disabled_commands: true
 
+  #Instantly Breaks Sponges When Swung At
+  insta_sponge_break: true
+
   #Soak Water/Lava Up With Sponges In a Configurable Radius
   soak_sponges: true
 
