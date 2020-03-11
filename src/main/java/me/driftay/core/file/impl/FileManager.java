@@ -14,11 +14,16 @@ public class FileManager {
 
     private CustomFile messages = new CustomFile(new File(SaberCore.getInstance().getDataFolder() + "/messages.yml"));
 
+    private CustomFile config = new CustomFile(new File(SaberCore.getInstance().getDataFolder() + "/config.yml"));
+
     public void setupFiles() {
         messages.setup(true, "");
+        config.setup(true, "");
     }
 
     public CustomFile getMessages() {
         return messages;
     }
+
+    public CustomFile getConfig() {return config;}
 }

@@ -27,6 +27,7 @@ public class ChatFilter extends SaberPlugin {
     public void disable() {
         super.disable();
         this.unregisterListeners();
+        this.unregisterCommands();
         ChatHandler.chatMuted = false;
     }
 }

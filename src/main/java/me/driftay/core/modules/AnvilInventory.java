@@ -33,6 +33,7 @@ public class AnvilInventory extends SaberPlugin {
     public void disable() {
         super.disable();
         this.unregisterListeners();
+        this.unregisterCommands();
     }
 
 
