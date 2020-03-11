@@ -20,6 +20,7 @@ public enum SaberPlugins {
     ANTI_DRAGONEGG_TELEPORT(new AntiDragonEggTeleport(SaberCore.getInstance()), "Disables ALL FORMS Of Teleportation For Dragon Eggs"),
     ANTI_EXPLOSION_DAMAGE(new AntiExplosionDamage(SaberCore.getInstance()), "Disables All Explosion Damage To Players"),
     ANTI_ITEM_DESTROY(new AntiItemDestroy(SaberCore.getInstance()), "Deny Items From Being Exploded/Burned"),
+    ANTI_ITEM_STORAGE(new AntiItemStorage(SaberCore.getInstance()), "Deny Certain Items From Being Stored Anywhere"),
     ANTI_JOINQUIT_MESSAGES(new AntiJoinQuitMessages(SaberCore.getInstance()), "Disable All Forms Of Join Quit Messages"),
     ANTI_MOB_AI(new AntiMobAI(SaberCore.getInstance()), "Disables AI/Targeting of Mobs"),
     ANTI_MOB_MOVEMENT(new AntiMobMovement(SaberCore.getInstance()), "Disables Movement of Certain Entities"),

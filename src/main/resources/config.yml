@@ -38,6 +38,9 @@ modules:
   #Deny Items From Being Exploded/Burned
   anti_item_destory: true
 
+  #Deny Certain Items From Being Stored Anywhere
+  anti_item_storage: false
+
   #Disable All Forms Of Join Quit Messages
   anti_joinquit_messages: true
 
@@ -76,6 +79,9 @@ settings:
   sponge-radius: 3
 
   anti-spawner-mine-radius: 80
+
+  denied-storage:
+    - 'SPAWNER'
 
   anti-mob-movement:
     - 'CREEPER'
