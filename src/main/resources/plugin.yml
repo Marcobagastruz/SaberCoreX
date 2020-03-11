@@ -5,15 +5,15 @@ version: ${project.version}
 
 commands:
   saberload:
-    description: Reload Recluse Configuration
+    description: Reload SaberCoreX Configuration
     usage: /<command>
     aliases: [saberreload, sreload]
   saberunregister:
-    description: Unregister a specific patch.
+    description: Unregister a specific module.
     usage: /<command>
     aliases: [saberunload, sunload]
   saberregister:
-    description: Register a specific patch.
+    description: Register a specific module.
     usage: /<command>
     aliases: [saberload, sload]
 
