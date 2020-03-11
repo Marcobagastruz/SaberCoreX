@@ -59,6 +59,9 @@ modules:
   #Disable Spawners From Spawning In Wilderness
   anti_wilderness_spawner: true
 
+  #Command That Allows a Virtual Anvil.
+  anvil_inventory: true
+
   #Automatically Inserts Lapis Into Enchantment Tables
   auto_enchanting_lapis: true
 

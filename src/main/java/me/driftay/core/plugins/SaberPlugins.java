@@ -26,6 +26,7 @@ public enum SaberPlugins {
     ANTI_SPAWNER_MINE(new AntiSpawnerMine(SaberCore.getInstance()), "Disables Players Mining Spawners In a Configurable Radius Whilst Players Are Near"),
     ANTI_WATER_BLAZE(new AntiWaterBlaze(SaberCore.getInstance()), "Disable Blazes From Taking Water Damage"),
     ANTI_WILDERNESS_SPAWNER(new AntiWildernessSpawner(SaberCore.getInstance()), "Disable Spawners From Spawning In Wilderness"),
+    ANVIL_INVENTORY(new AnvilInventory(SaberCore.getInstance()), "Command That Allows a Virtual Anvil."),
     AUTO_ENCHANTING_LAPIS(new AutoEnchantingLapis(SaberCore.getInstance()), "Automatically Inserts Lapis Into Enchantment Tables"),
     AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn"),
     BORDER_PATCHES(new BorderPatches(SaberCore.getInstance()), "Overall Border Patches For World Border"),

@@ -28,3 +28,5 @@ permissions:
     description: Bypass Chat Delay
   sabercore.chatfilter.bypass:
     description: Bypass Chat Filter
+  sabercore.anvil:
+    description: Use Virtual Anvil
