@@ -7,13 +7,11 @@ import me.driftay.core.libs.SaberPluginListener;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.utils.StringUtils;
 import me.driftay.core.utils.struct.XMaterial;
-import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.util.StringUtil;
 
 import java.util.List;
 
@@ -47,12 +45,13 @@ public class AntiSpawnerMine extends SaberPlugin {
 
         @EventHandler
         public void onSpawnerMine(BlockBreakEvent e) {
-            if(!e.getBlock().getType().equals(XMaterial.SPAWNER.parseMaterial())) return;
+            if (!e.getBlock().getType().equals(XMaterial.SPAWNER.parseMaterial())) return;
 
             if (nearbyEnemies(e.getPlayer(), SaberCore.getInstance().getConfig().getDouble("settings.anti-spawner-mine-radius"), null) && !e.getPlayer().hasPermission("sabercore.spawnermine,bypass"))
                 e.setCancelled(true);
 
-            if(e.isCancelled()) e.getPlayer().sendMessage(StringUtils.translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("anti-spawner-mine-players-near")));
+            if (e.isCancelled())
+                e.getPlayer().sendMessage(StringUtils.translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("anti-spawner-mine-players-near")));
 
         }
 

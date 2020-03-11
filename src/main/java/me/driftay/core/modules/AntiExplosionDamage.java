@@ -37,8 +37,8 @@ public class AntiExplosionDamage extends SaberPlugin {
         }
 
         @EventHandler
-        public void onEntityDamage(EntityDamageByEntityEvent event){
-            if(event.getEntity() instanceof Player && event.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION || event.getCause() == EntityDamageEvent.DamageCause.ENTITY_EXPLOSION)
+        public void onEntityDamage(EntityDamageByEntityEvent event) {
+            if (event.getEntity() instanceof Player && event.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION || event.getCause() == EntityDamageEvent.DamageCause.ENTITY_EXPLOSION)
                 event.setCancelled(true);
         }
     }

@@ -19,10 +19,6 @@ public class CustomFile {
     private YamlConfiguration fileConfig;
     private HashMap<String, Object> cachedObjects = new HashMap<>();
 
-    public enum dataTypes {
-        STRING, INT, DOUBLE, STRINGLIST, BOOLEAN, MAP
-    }
-
     public CustomFile(File file) {
         this.file = file;
         this.fileConfig = YamlConfiguration.loadConfiguration(file);
@@ -79,7 +75,6 @@ public class CustomFile {
     public boolean fetchBoolean(String key) {
         return (boolean) getObj(key, dataTypes.BOOLEAN);
     }
-
 
     public Object getObj(String key, Enum<dataTypes> data) {
         //check for cache first
@@ -138,5 +133,9 @@ public class CustomFile {
 
     public YamlConfiguration getConfig() {
         return fileConfig;
+    }
+
+    public enum dataTypes {
+        STRING, INT, DOUBLE, STRINGLIST, BOOLEAN, MAP
     }
 }

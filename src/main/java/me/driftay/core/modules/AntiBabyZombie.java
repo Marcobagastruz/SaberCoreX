@@ -37,12 +37,12 @@ public class AntiBabyZombie extends SaberPlugin {
         }
 
         @EventHandler
-        public void onEntitySpawn(CreatureSpawnEvent event){
-            if(event.getEntity().getType() == EntityType.ZOMBIE){
+        public void onEntitySpawn(CreatureSpawnEvent event) {
+            if (event.getEntity().getType() == EntityType.ZOMBIE) {
                 Zombie zombie = (Zombie) event.getEntity();
-                if(zombie.isBaby())
+                if (zombie.isBaby())
                     event.setCancelled(true);
-                if(zombie.isInsideVehicle())
+                if (zombie.isInsideVehicle())
                     event.setCancelled(true);
             }
         }

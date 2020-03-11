@@ -38,6 +38,7 @@ public class AntiMobMovement extends SaberPlugin {
         super.disable();
         this.unregisterListeners();
     }
+
     static class AntiMobMovementListener extends SaberPluginListener<AntiMobMovement> {
 
         public AntiMobMovementListener(AntiMobMovement patch) {
@@ -46,11 +47,12 @@ public class AntiMobMovement extends SaberPlugin {
 
         @EventHandler(priority = EventPriority.LOW)
         public void entitySpawnEvent(EntitySpawnEvent event) {
-            if(entList.isEmpty()) return;
-            if (event.getEntity().getType() == EntityType.DROPPED_ITEM || event.getEntity().getType() == EntityType.PRIMED_TNT) return;
+            if (entList.isEmpty()) return;
+            if (event.getEntity().getType() == EntityType.DROPPED_ITEM || event.getEntity().getType() == EntityType.PRIMED_TNT)
+                return;
             if (event.getEntity() instanceof Player) return;
 
-            if(!entList.contains(event.getEntity().getType().toString())) return;
+            if (!entList.contains(event.getEntity().getType().toString())) return;
             final LivingEntity entity = (LivingEntity) event.getEntity();
             entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 999999999, 25));
         }

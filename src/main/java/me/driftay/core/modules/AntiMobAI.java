@@ -36,7 +36,7 @@ public class AntiMobAI extends SaberPlugin {
         }
 
         @EventHandler(priority = EventPriority.LOW)
-        public void onEntityTarget(EntityTargetEvent event){
+        public void onEntityTarget(EntityTargetEvent event) {
             event.setCancelled(true);
         }
     }

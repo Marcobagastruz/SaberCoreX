@@ -26,6 +26,10 @@ public class SoakSponges extends SaberPlugin {
         super(p);
     }
 
+    private static boolean isSponge(Material material) {
+        return material.equals(Material.SPONGE);
+    }
+
     @Override
     public void enable() {
         super.enable();
@@ -79,7 +83,7 @@ public class SoakSponges extends SaberPlugin {
                     for (int y = -radius; y <= radius; ++y) {
                         for (int z = -radius; z <= radius; ++z) {
                             Location locIntorno = new Location(player.getWorld(), e.getBlock().getX() + x, e.getBlock().getY() + y, e.getBlock().getZ() + z);
-                            if (locIntorno.getBlock().getType() == XMaterial.LAVA.parseMaterial()  || locIntorno.getBlock().getType() == XMaterial.WATER.parseMaterial()) {
+                            if (locIntorno.getBlock().getType() == XMaterial.LAVA.parseMaterial() || locIntorno.getBlock().getType() == XMaterial.WATER.parseMaterial()) {
                                 locIntorno.getBlock().setType(Material.AIR);
                             }
                         }
@@ -110,9 +114,6 @@ public class SoakSponges extends SaberPlugin {
                 }
             }
         }
-    }
-    private static boolean isSponge(Material material) {
-        return material.equals(Material.SPONGE);
     }
 
 }

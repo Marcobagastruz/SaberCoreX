@@ -68,6 +68,9 @@ modules:
   #Overall Border Patches For World Border
   border_patches: true
 
+  #Enables a dynamic word filtering system via /chatfilter.
+  chat_filter: true
+
   #Denies Users To Specific Commands
   disabled_commands: true
 
@@ -88,6 +91,24 @@ settings:
 
   denied-storage:
     - 'SPAWNER'
+
+  chat-filter:
+    format: '&b&l[Filtered] &e{player}&f: {message}'
+    chat-slow-time: 0
+    filtered-words:
+      - nigger
+      - faggot
+      - queer
+      - slut
+      - whore
+    whitelisted-links:
+      - youtube.com
+      - gyazo.com
+      - discord.gg
+      - twitter.com
+      - saber.dev
+    filtered-phrases:
+      - saber is awesome
 
   anti-mob-movement:
     - 'CREEPER'

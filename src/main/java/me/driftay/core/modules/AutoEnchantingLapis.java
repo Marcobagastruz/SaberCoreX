@@ -3,15 +3,12 @@ package me.driftay.core.modules;
 import me.driftay.core.libs.SaberPluginListener;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.utils.struct.XMaterial;
-import org.bukkit.DyeColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.enchantment.EnchantItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.EnchantingInventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.Dye;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
@@ -55,7 +52,7 @@ public class AutoEnchantingLapis extends SaberPlugin {
         public void openInventoryEvent(InventoryOpenEvent e) {
             if (e.getInventory() instanceof EnchantingInventory || e.getPlayer().isOp() || e.getPlayer().hasPermission("*")) {
                 e.getInventory().setItem(1, XMaterial.LAPIS_LAZULI.parseItem());
-                inventories.add((EnchantingInventory)e.getInventory());
+                inventories.add((EnchantingInventory) e.getInventory());
             }
         }
 

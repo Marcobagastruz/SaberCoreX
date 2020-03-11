@@ -12,9 +12,9 @@ import java.io.File;
  */
 public class FileManager {
 
-    private CustomFile messages = new CustomFile(new File(SaberCore.getInstance().getDataFolder()+"/messages.yml"));
+    private CustomFile messages = new CustomFile(new File(SaberCore.getInstance().getDataFolder() + "/messages.yml"));
 
-    public void setupFiles(){
+    public void setupFiles() {
         messages.setup(true, "");
     }
 

@@ -26,6 +26,10 @@ public class SpawnerSponge extends SaberPlugin {
         super(p);
     }
 
+    private static boolean isSpawner(Material material) {
+        return material.equals(XMaterial.SPAWNER.parseMaterial());
+    }
+
     @Override
     public void enable() {
         super.enable();
@@ -110,9 +114,5 @@ public class SpawnerSponge extends SaberPlugin {
                 }
             }
         }
-    }
-
-    private static boolean isSpawner(Material material) {
-        return material.equals(XMaterial.SPAWNER.parseMaterial());
     }
 }

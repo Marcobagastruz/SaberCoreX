@@ -36,12 +36,12 @@ public class AntiJoinQuitMessages extends SaberPlugin {
         }
 
         @EventHandler
-        public void onJoin(PlayerJoinEvent e){
+        public void onJoin(PlayerJoinEvent e) {
             e.setJoinMessage(null);
         }
 
         @EventHandler
-        public void onQuit(PlayerQuitEvent e){
+        public void onQuit(PlayerQuitEvent e) {
             e.setQuitMessage(null);
         }
     }

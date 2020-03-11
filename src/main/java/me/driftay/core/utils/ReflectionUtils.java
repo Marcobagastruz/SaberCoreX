@@ -107,7 +107,6 @@ public class ReflectionUtils {
     }
 
     /**
-     *
      * @param player The player
      * @return The players connection
      */

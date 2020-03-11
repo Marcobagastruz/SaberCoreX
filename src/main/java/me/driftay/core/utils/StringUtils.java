@@ -4,6 +4,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * SaberCore - Developed by Driftay.
  * All rights reserved 2020.
@@ -14,6 +17,14 @@ public class StringUtils {
 
     public static String translate(String str) {
         return ChatColor.translateAlternateColorCodes('&', str);
+    }
+
+    public static List<String> translate(List<String> string) {
+        List<String> colored = new ArrayList<>();
+        for (String line : string) {
+            colored.add(translate(line));
+        }
+        return colored;
     }
 
     public static String getStringFromLocation(Location loc) {

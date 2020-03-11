@@ -32,11 +32,11 @@ public class AntiCobbleMonster extends SaberPlugin {
 
     static class AntiCobbleMonsterListener extends SaberPluginListener<AntiCobbleMonster> {
 
+        private final BlockFace[] faces = {BlockFace.SELF, BlockFace.UP, BlockFace.DOWN, BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST};
+
         public AntiCobbleMonsterListener(AntiCobbleMonster patch) {
             super(patch);
         }
-
-        private final BlockFace[] faces = {BlockFace.SELF, BlockFace.UP, BlockFace.DOWN, BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST};
 
         @EventHandler
         public void onFromTo(BlockFromToEvent event) {

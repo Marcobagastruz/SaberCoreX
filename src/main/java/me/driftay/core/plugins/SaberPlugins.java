@@ -2,8 +2,7 @@ package me.driftay.core.plugins;
 
 import me.driftay.core.SaberCore;
 import me.driftay.core.modules.*;
-
-import javax.swing.border.Border;
+import me.driftay.core.modules.chat_filter.ChatFilter;
 
 /**
  * SaberCore - Developed by Driftay.
@@ -30,6 +29,7 @@ public enum SaberPlugins {
     AUTO_ENCHANTING_LAPIS(new AutoEnchantingLapis(SaberCore.getInstance()), "Automatically Inserts Lapis Into Enchantment Tables"),
     AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn"),
     BORDER_PATCHES(new BorderPatches(SaberCore.getInstance()), "Overall Border Patches For World Border"),
+    CHAT_FILTER(new ChatFilter(SaberCore.getInstance()), "Enables a dynamic word filtering system via /chatfilter."),
     DISABLED_COMMANDS(new DisabledCommands(SaberCore.getInstance()), "Denies Users To Specific Commands"),
     INSTA_SPONGE_BREAK(new InstaSpongeBreak(SaberCore.getInstance()), "Instantly Breaks Sponges When Swung At"),
     SOAK_SPONGES(new SoakSponges(SaberCore.getInstance()), "Soak Water/Lava Up With Sponges In a Configurable Radius"),

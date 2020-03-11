@@ -8,3 +8,9 @@ permissions:
     description: Bypass Disabled Commands
   sabercore.spawnermine.bypass:
     description: Bypass Spawner Mine Whilst Enemies Are Nearby
+  sabercore.staff:
+    description: Bypass Chat Mute
+  sabercore.chatdelay.bypass:
+    description: Bypass Chat Delay
+  sabercore.chatfilter.bypass:
+    description: Bypass Chat Filter

@@ -1,6 +1,7 @@
 package me.driftay.core;
 
 import me.driftay.core.file.impl.FileManager;
+import me.driftay.core.modules.chat_filter.ChatHandler;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.plugins.SaberPlugins;
 import org.bukkit.Bukkit;
@@ -15,17 +16,18 @@ import java.util.HashMap;
  */
 public class SaberCore extends JavaPlugin {
 
-    private FileManager fileManager;
     public static SaberCore instance;
     public boolean shutting_down = false;
+    private FileManager fileManager;
+    private ChatHandler chatHandler;
     private HashMap<String, SaberPlugin> loaded_modules = new HashMap<>();
-
-    public FileManager getFileManager() {
-        return fileManager;
-    }
 
     public static SaberCore getInstance() {
         return instance;
+    }
+
+    public FileManager getFileManager() {
+        return fileManager;
     }
 
     public void onEnable() {
@@ -34,6 +36,8 @@ public class SaberCore extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         fileManager = new FileManager();
         getFileManager().setupFiles();
+        chatHandler = new ChatHandler();
+
 
         //Register Modules Last
         Bukkit.getScheduler().runTaskLater(this, this::registerPatches, 20L);
@@ -83,5 +87,8 @@ public class SaberCore extends JavaPlugin {
         this.loaded_modules.clear();
     }
 
+    public ChatHandler getChatHandler() {
+        return chatHandler;
+    }
 
 }
