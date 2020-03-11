@@ -53,6 +53,9 @@ modules:
   #Disables Players Mining Spawners In a Configurable Radius Whilst Players Are Near
   anti_spawner_mine: true
 
+  #Disable Blazes From Taking Water Damage
+  anti_water_blaze: true
+
   #Disable Spawners From Spawning In Wilderness
   anti_wilderness_spawner: true
 

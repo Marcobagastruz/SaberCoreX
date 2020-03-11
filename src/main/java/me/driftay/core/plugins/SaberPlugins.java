@@ -25,6 +25,7 @@ public enum SaberPlugins {
     ANTI_MOB_AI(new AntiMobAI(SaberCore.getInstance()), "Disables AI/Targeting of Mobs"),
     ANTI_MOB_MOVEMENT(new AntiMobMovement(SaberCore.getInstance()), "Disables Movement of Certain Entities"),
     ANTI_SPAWNER_MINE(new AntiSpawnerMine(SaberCore.getInstance()), "Disables Players Mining Spawners In a Configurable Radius Whilst Players Are Near"),
+    ANTI_WATER_BLAZE(new AntiWaterBlaze(SaberCore.getInstance()), "Disable Blazes From Taking Water Damage"),
     ANTI_WILDERNESS_SPAWNER(new AntiWildernessSpawner(SaberCore.getInstance()), "Disable Spawners From Spawning In Wilderness"),
     AUTO_ENCHANTING_LAPIS(new AutoEnchantingLapis(SaberCore.getInstance()), "Automatically Inserts Lapis Into Enchantment Tables"),
     AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn"),
