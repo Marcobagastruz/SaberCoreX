@@ -27,12 +27,14 @@ public enum SaberPlugins {
     ANTI_WATER_BLAZE(new AntiWaterBlaze(SaberCore.getInstance()), "Disable Blazes From Taking Water Damage"),
     ANTI_WILDERNESS_SPAWNER(new AntiWildernessSpawner(SaberCore.getInstance()), "Disable Spawners From Spawning In Wilderness"),
     ANVIL_INVENTORY(new AnvilInventory(SaberCore.getInstance()), "Command That Allows a Virtual Anvil."),
+    ARMOR_SWAP(new ArmorSwap(SaberCore.getInstance()), "Automatically Switch Armor From Hotbar By Simply Right Clicking"),
     AUTO_ENCHANTING_LAPIS(new AutoEnchantingLapis(SaberCore.getInstance()), "Automatically Inserts Lapis Into Enchantment Tables"),
     AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn"),
     BORDER_PATCHES(new BorderPatches(SaberCore.getInstance()), "Overall Border Patches For World Border"),
     CHAT_FILTER(new ChatFilter(SaberCore.getInstance()), "Enables a dynamic word filtering system via /chatfilter."),
     DISABLED_COMMANDS(new DisabledCommands(SaberCore.getInstance()), "Denies Users To Specific Commands"),
     INSTA_SPONGE_BREAK(new InstaSpongeBreak(SaberCore.getInstance()), "Instantly Breaks Sponges When Swung At"),
+    MAX_FLY_HEIGHT(new MaxFlyHeight(SaberCore.getInstance()), "Limit Players Fly Height on the Y-Axis"),
     SOAK_SPONGES(new SoakSponges(SaberCore.getInstance()), "Soak Water/Lava Up With Sponges In a Configurable Radius"),
     SPAWNER_SPONGE(new SpawnerSponge(SaberCore.getInstance()), "Soak Water/Lava Up With Spawners In a Configurable Radius");
 

@@ -50,7 +50,7 @@ public class AutoEnchantingLapis extends SaberPlugin {
 
         @EventHandler
         public void openInventoryEvent(InventoryOpenEvent e) {
-            if (e.getInventory() instanceof EnchantingInventory || e.getPlayer().isOp() || e.getPlayer().hasPermission("*")) {
+            if (e.getInventory() instanceof EnchantingInventory) {
                 e.getInventory().setItem(1, XMaterial.LAPIS_LAZULI.parseItem());
                 inventories.add((EnchantingInventory) e.getInventory());
             }
@@ -72,7 +72,7 @@ public class AutoEnchantingLapis extends SaberPlugin {
         }
 
         @EventHandler
-        public void enchantItemEvent(final EnchantItemEvent e) {
+        public void enchantItemEvent(EnchantItemEvent e) {
             if (inventories.contains(e.getInventory())) {
                 e.getInventory().setItem(1, XMaterial.LAPIS_LAZULI.parseItem());
             }

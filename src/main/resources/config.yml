@@ -62,6 +62,9 @@ modules:
   #Command That Allows a Virtual Anvil.
   anvil_inventory: true
 
+  #Automatically Switch Armor From Hotbar By Simply Right Clicking
+  armor_swap: true
+
   #Automatically Inserts Lapis Into Enchantment Tables
   auto_enchanting_lapis: true
 
@@ -80,6 +83,9 @@ modules:
   #Instantly Breaks Sponges When Swung At
   insta_sponge_break: true
 
+  #Limit Players Fly Height on the Y-Axis
+  max_fly_height: true
+
   #Soak Water/Lava Up With Sponges In a Configurable Radius
   soak_sponges: true
 
@@ -91,6 +97,10 @@ settings:
   sponge-radius: 3
 
   anti-spawner-mine-radius: 80
+
+  max-fly-height:
+    limit: 255.5
+    damage-player: true #Will Damage The Player For 1/2 a Heart
 
   bank-notes:
     item-type: PAPER

@@ -15,6 +15,9 @@
 general:
   no-permission: '&c&l[!] &7You do not have permission to execute this command!'
 
+max-fly-height:
+  limit: '&c&l[!] &cYou cannot fly above y:{limit}!'
+
 disabled-command-prompt: '&c&l[!] &4You are not permitted to use &c&l&n{command}'
 anti-spawner-mine-players-near: '&c&l[!] &7You may not break spawners while enemies are near!'
 cannot-store-item: '&c&l[!] &7You may not store &b{item}&7!'
