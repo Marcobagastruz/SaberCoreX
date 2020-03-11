@@ -38,6 +38,9 @@ modules:
   #Deny Items From Being Exploded/Burned
   anti_item_destory: true
 
+  #Disable All Forms Of Join Quit Messages
+  anti_joinquit_messages: true
+
   #Disables AI/Targeting of Mobs
   anti_mob_ai: true
 
@@ -49,6 +52,9 @@ modules:
 
   #Disable Spawners From Spawning In Wilderness
   anti_wilderness_spawner: true
+
+  #Automatically Inserts Lapis Into Enchantment Tables
+  auto_enchanting_lapis: true
 
   #Automatically Respawn
   auto_respawn: true
