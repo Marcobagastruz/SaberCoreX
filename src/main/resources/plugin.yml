@@ -18,6 +18,8 @@ commands:
     aliases: [saberload, sload]
 
 permissions:
+  sabercore.chunkbusters.give:
+    description: Ability to grant players chunkbusters
   sabercore.disabledcommands.bypass:
     description: Bypass Disabled Commands
   sabercore.spawnermine.bypass:

@@ -14,9 +14,17 @@
 #<-------------------------------------->NOTES<-------------------------------------->#
 general:
   no-permission: '&c&l[!] &7You do not have permission to execute this command!'
+  player-not-found: '&c&l[!] &b{player} &7is not online!'
 
 max-fly-height:
   limit: '&c&l[!] &cYou cannot fly above y:{limit}!'
+
+chunkbuster:
+  command-usage: '&c&l[!] &7Try /chunkbuster give <player> <amount>.'
+  received: '&c&l[!] &7You have received a chunkbuster.'
+  use-message: '&c&l[!] &7A ChunkBuster has been placed, you have &c10 seconds &7 to leave this chunk!'
+  being-busted: '&c&l[!] &7This chunk is already being busted.'
+  cant-place: '&c&l[!] &7You can''t place ChunkBusters here!'
 
 disabled-command-prompt: '&c&l[!] &4You are not permitted to use &c&l&n{command}'
 anti-spawner-mine-players-near: '&c&l[!] &7You may not break spawners while enemies are near!'

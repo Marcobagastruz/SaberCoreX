@@ -3,7 +3,7 @@ package me.driftay.core.modules;
 import me.driftay.core.SaberCore;
 import me.driftay.core.libs.SaberPluginListener;
 import me.driftay.core.plugins.SaberPlugin;
-import org.bukkit.Bukkit;
+import me.driftay.core.utils.struct.XSound;
 import org.bukkit.Material;
 import org.bukkit.block.*;
 import org.bukkit.entity.Player;
@@ -15,7 +15,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
 
 /**
@@ -52,9 +51,8 @@ public class ArmorSwap extends SaberPlugin {
         }
 
         public void equipArmor(Player player, ItemStack is) {
-            if (is == null || is.getType() == Material.AIR) {
-                return;
-            }
+            if (is == null || is.getType() == Material.AIR) return;
+
             String n = is.getType().toString().toLowerCase();
             PlayerInventory inv = player.getInventory();
             if (n.contains("helmet")) {
@@ -93,10 +91,10 @@ public class ArmorSwap extends SaberPlugin {
 
             Player p = e.getPlayer();
 
-            if (p.hasMetadata("lastArmorSwap")){
+            if (p.hasMetadata("lastArmorSwap")) {
                 long dif = System.currentTimeMillis() - p.getMetadata("lastArmorSwap").get(0).asLong();
-                if(dif < SaberCore.getInstance().getConfig().getLong("settings.armor-swap.cooldown"))
-                return;
+                if (dif < SaberCore.getInstance().getConfig().getLong("settings.armor-swap.cooldown"))
+                    return;
             }
 
             if (e.isCancelled() && p.hasMetadata("noArmorSwap")) return;
@@ -106,6 +104,9 @@ public class ArmorSwap extends SaberPlugin {
             e.setUseItemInHand(Event.Result.DENY);
             p.setMetadata("lastArmorSwap", new FixedMetadataValue(SaberCore.getInstance(), System.currentTimeMillis()));
             this.equipArmor(p, e.getItem());
+            if (SaberCore.getInstance().getConfig().getBoolean("settings.armor-swap.play-sound")) {
+                p.playSound(p.getLocation(), String.valueOf(XSound.matchXSound(SaberCore.getInstance().getConfig().getString("settings.armor-swap.sound"))), 1.0f, 0.8f);
+            }
         }
     }
 }

@@ -4,6 +4,10 @@ import me.driftay.core.commands.CommandSaberRegister;
 import me.driftay.core.commands.CommandSaberReload;
 import me.driftay.core.commands.CommandSaberUnregister;
 import me.driftay.core.file.impl.FileManager;
+import me.driftay.core.hooks.HookManager;
+import me.driftay.core.hooks.PluginHook;
+import me.driftay.core.hooks.impl.FactionHook;
+import me.driftay.core.hooks.impl.WorldGuardHook;
 import me.driftay.core.modules.chat_filter.ChatHandler;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.plugins.SaberPlugins;
@@ -12,7 +16,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * SaberCore - Developed by Driftay.
@@ -38,14 +44,17 @@ public class SaberCore extends JavaPlugin {
 
     public void onEnable() {
         instance = this;
-        saveDefaultConfig();
-        getConfig().options().copyDefaults(true);
         fileManager = new FileManager();
         getFileManager().setupFiles();
         chatHandler = new ChatHandler();
         setupEconomy();
         registerCommands();
-
+        List<PluginHook<?>> hooks = new ArrayList<>();
+        hooks.add(new FactionHook());
+        if (Bukkit.getPluginManager().getPlugin("WorldGuard") != null) {
+            hooks.add(new WorldGuardHook());
+        }
+        new HookManager(hooks);
         //Register Modules Last
         Bukkit.getScheduler().runTaskLater(this, this::registerPatches, 20L);
     }

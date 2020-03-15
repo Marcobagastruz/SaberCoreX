@@ -3,6 +3,7 @@ package me.driftay.core.plugins;
 import me.driftay.core.SaberCore;
 import me.driftay.core.modules.*;
 import me.driftay.core.modules.chat_filter.ChatFilter;
+import me.driftay.core.modules.chunkbuster.Chunkbusters;
 
 /**
  * SaberCore - Developed by Driftay.
@@ -28,10 +29,10 @@ public enum SaberPlugins {
     ANTI_WILDERNESS_SPAWNER(new AntiWildernessSpawner(SaberCore.getInstance()), "Disable Spawners From Spawning In Wilderness"),
     ANVIL_INVENTORY(new AnvilInventory(SaberCore.getInstance()), "Command That Allows a Virtual Anvil."),
     ARMOR_SWAP(new ArmorSwap(SaberCore.getInstance()), "Automatically Switch Armor From Hotbar By Simply Right Clicking"),
-    AUTO_ENCHANTING_LAPIS(new AutoEnchantingLapis(SaberCore.getInstance()), "Automatically Inserts Lapis Into Enchantment Tables"),
     AUTO_RESPAWN(new AutoRespawn(SaberCore.getInstance()), "Automatically Respawn"),
     BORDER_PATCHES(new BorderPatches(SaberCore.getInstance()), "Overall Border Patches For World Border"),
     CHAT_FILTER(new ChatFilter(SaberCore.getInstance()), "Enables a dynamic word filtering system via /chatfilter."),
+    CHUNKBUSTERS(new Chunkbusters(SaberCore.getInstance()), "Enabled a enhanced Chunk-busting system"),
     DISABLED_COMMANDS(new DisabledCommands(SaberCore.getInstance()), "Denies Users To Specific Commands"),
     INSTA_SPONGE_BREAK(new InstaSpongeBreak(SaberCore.getInstance()), "Instantly Breaks Sponges When Swung At"),
     MAX_FLY_HEIGHT(new MaxFlyHeight(SaberCore.getInstance()), "Limit Players Fly Height on the Y-Axis"),
