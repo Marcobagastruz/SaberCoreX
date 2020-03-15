@@ -48,7 +48,7 @@ public class Chunkbusters extends SaberPlugin {
     public void enable() {
         super.enable();
         this.registerListener(new ChunkbustersListener(this));
-        this.registerCommand(new ChunkbustersListener.CommandChunkbusters(this));
+        this.registerCommand(new CommandChunkbusters(this));
     }
 
     @Override
@@ -197,6 +197,7 @@ public class Chunkbusters extends SaberPlugin {
                 }
             }
         }
+    }
 
         static class CommandChunkbusters extends SaberPluginCommand<Chunkbusters> {
 
@@ -255,6 +256,4 @@ public class Chunkbusters extends SaberPlugin {
             }
         }
 
-
-    }
 }

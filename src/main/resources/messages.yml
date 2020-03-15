@@ -19,6 +19,10 @@ general:
 max-fly-height:
   limit: '&c&l[!] &cYou cannot fly above y:{limit}!'
 
+shockwave:
+  command-usage: '&c&l[!] &7Try /shockwave give <pickaxe/shovel/hoe> <radius> <player>'
+  received: '&c&l[!] &7You have received a shockwave tool!'
+
 chunkbuster:
   command-usage: '&c&l[!] &7Try /chunkbuster give <player> <amount>.'
   received: '&c&l[!] &7You have received a chunkbuster.'

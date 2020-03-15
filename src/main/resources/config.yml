@@ -59,7 +59,7 @@ modules:
   #Disable Spawners From Spawning In Wilderness
   anti_wilderness_spawner: true
 
-  #Command That Allows a Virtual Anvil.
+  #Command That Allows a Virtual Anvil
   anvil_inventory: true
 
   #Automatically Switch Armor From Hotbar By Simply Right Clicking
@@ -71,7 +71,7 @@ modules:
   #Overall Border Patches For World Border
   border_patches: true
 
-  #Enables a dynamic word filtering system via /chatfilter.
+  #Enables a dynamic word filtering system via /chatfilter
   chat_filter: true
 
   #Enabled a enhanced Chunk-busting system
@@ -86,6 +86,9 @@ modules:
   #Limit Players Fly Height on the Y-Axis
   max_fly_height: true
 
+  #Enabled a enhanced Trench-Tool System
+  shockwaves: true
+
   #Soak Water/Lava Up With Sponges In a Configurable Radius
   soak_sponges: true
 
@@ -95,6 +98,8 @@ modules:
 
 settings:
   sponge-radius: 3
+
+  anti-spawner-mine-radius: 80
 
   chunkbuster:
     async-mode: false #Will Destroy Layer By Layer if Enabled.
@@ -111,7 +116,15 @@ settings:
         - '&f'
         - '&4&l* &cObtained from: &fstore.mystore.com'
 
-  anti-spawner-mine-radius: 80
+  shockwave:
+    unbreaking-level: 3
+    efficiency-level: 5
+    item:
+      display-name: '&c&lShockwave Tool &7({itemtype})'
+      lore:
+        - '&f'
+        - '&4&l* &cRadius: &f{radius}x{radius}'
+    log-core-protect: true
 
   armor-swap:
     cooldown: 500 #This is in Milliseconds - 500 = .5 seconds

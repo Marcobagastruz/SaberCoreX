@@ -18,6 +18,8 @@ commands:
     aliases: [saberload, sload]
 
 permissions:
+  sabercore.shockwave.give:
+    description: Ability to grant players shockwaves
   sabercore.chunkbusters.give:
     description: Ability to grant players chunkbusters
   sabercore.disabledcommands.bypass:

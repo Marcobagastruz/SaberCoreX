@@ -27,6 +27,18 @@ public class StringUtils {
         return colored;
     }
 
+    public static List<String> translateWithPlaceholders(List<String> string, Placeholder... placeholders) {
+        List<String> colored = new ArrayList<>();
+        for (String line : string) {
+            String coloredLine = translate(line);
+            for (Placeholder placeholder : placeholders) {
+                coloredLine = coloredLine.replace(placeholder.getKey(), placeholder.getValue());
+            }
+            colored.add(coloredLine);
+        }
+        return colored;
+    }
+
     public static String getStringFromLocation(Location loc) {
         return loc.getWorld().getName() + ":" + loc.getX() + ":" + loc.getY() + ":" + loc.getZ();
     }
