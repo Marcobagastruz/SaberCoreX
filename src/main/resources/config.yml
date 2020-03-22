@@ -74,7 +74,7 @@ modules:
   #Enables a dynamic word filtering system via /chatfilter
   chat_filter: true
 
-  #Enabled a enhanced Chunk-busting system
+  #Enables a enhanced Chunk-busting system
   chunkbusters: true
 
   #Denies Users To Specific Commands
@@ -88,6 +88,9 @@ modules:
 
   #Enabled a enhanced Trench-Tool System
   shockwaves: true
+
+  #Disable Dropping Of Items When In Cursor In Inventory
+  no_cursor_drop: true
 
   #Soak Water/Lava Up With Sponges In a Configurable Radius
   soak_sponges: true

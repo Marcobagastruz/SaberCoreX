@@ -38,6 +38,7 @@ public enum SaberPlugins {
     INSTA_SPONGE_BREAK(new InstaSpongeBreak(SaberCore.getInstance()), "Instantly Breaks Sponges When Swung At"),
     MAX_FLY_HEIGHT(new MaxFlyHeight(SaberCore.getInstance()), "Limit Players Fly Height on the Y-Axis"),
     SHOCKWAVES(new Shockwave(SaberCore.getInstance()), "Enabled a enhanced Trench-Tool System"),
+    NO_CURSOR_DROP(new NoCursorDrop(SaberCore.getInstance()), "Disable Dropping Of Items When In Cursor In Inventory"),
     SOAK_SPONGES(new SoakSponges(SaberCore.getInstance()), "Soak Water/Lava Up With Sponges In a Configurable Radius"),
     SPAWNER_SPONGE(new SpawnerSponge(SaberCore.getInstance()), "Soak Water/Lava Up With Spawners In a Configurable Radius");
 

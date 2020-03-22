@@ -61,7 +61,6 @@ public class SaberCore extends JavaPlugin {
 
     public void onDisable() {
         this.shutting_down = true;
-        this.saveConfig();
         this.unregisterPatches();
     }
 
