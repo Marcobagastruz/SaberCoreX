@@ -35,10 +35,14 @@ public enum SaberPlugins {
     CHAT_FILTER(new ChatFilter(SaberCore.getInstance()), "Enables a dynamic word filtering system via /chatfilter"),
     CHUNKBUSTERS(new Chunkbusters(SaberCore.getInstance()), "Enabled a enhanced Chunk-busting system"),
     DISABLED_COMMANDS(new DisabledCommands(SaberCore.getInstance()), "Denies Users To Specific Commands"),
+    HARVESTERHOES(new HarvesterHoes(SaberCore.getInstance()), "Enable's Harvester Hoes"),
     INSTA_SPONGE_BREAK(new InstaSpongeBreak(SaberCore.getInstance()), "Instantly Breaks Sponges When Swung At"),
+    JELLYLEGS(new JellyLegs(SaberCore.getInstance()), "Enable and Disable Fall Damage"),
     MAX_FLY_HEIGHT(new MaxFlyHeight(SaberCore.getInstance()), "Limit Players Fly Height on the Y-Axis"),
     SHOCKWAVES(new Shockwave(SaberCore.getInstance()), "Enabled a enhanced Trench-Tool System"),
+    NIGHTVISION(new NightVision(SaberCore.getInstance()), "Enable and Disable Night Vision"),
     NO_CURSOR_DROP(new NoCursorDrop(SaberCore.getInstance()), "Disable Dropping Of Items When In Cursor In Inventory"),
+    PING(new Ping(SaberCore.getInstance()), "Show Ping Values To The Server"),
     SOAK_SPONGES(new SoakSponges(SaberCore.getInstance()), "Soak Water/Lava Up With Sponges In a Configurable Radius"),
     SPAWNER_SPONGE(new SpawnerSponge(SaberCore.getInstance()), "Soak Water/Lava Up With Spawners In a Configurable Radius");
 

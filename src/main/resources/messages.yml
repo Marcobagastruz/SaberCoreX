@@ -15,9 +15,26 @@
 general:
   no-permission: '&c&l[!] &7You do not have permission to execute this command!'
   player-not-found: '&c&l[!] &b{player} &7is not online!'
+  must-be-player: '&c&l[!] &7You must be a player to use this command!'
 
 max-fly-height:
   limit: '&c&l[!] &cYou cannot fly above y:{limit}!'
+
+night-vision:
+  toggled-on: '&c&l[!] &7You have togged night vision &aon&7!'
+  toggled-off: '&c&l[!] &7You have togged night vision &4off&7!'
+
+jelly-legs:
+  toggled-on: '&c&l[!] &7You have togged jelly legs &aon&7!'
+  toggled-off: '&c&l[!] &7You have togged jelly legs &4off&7!'
+
+ping:
+  ping-self: '&d{player} &ehas a ping of &d{ping} &ems.'
+  ping-other: '&d{player} 7ehas a ping of &d{ping} &ems.'
+
+harvester-hoe:
+  received: '&c&l[!] &7You have received a harvester hoe.'
+  command-usage: '&c&l[!] &7Try /harvesterhoe give <player> <amount>.'
 
 shockwave:
   command-usage: '&c&l[!] &7Try /shockwave give <pickaxe/shovel/hoe> <radius> <player>'

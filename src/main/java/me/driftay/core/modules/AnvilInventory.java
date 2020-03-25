@@ -11,8 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.plugin.Plugin;
 
-import java.util.Collections;
-
 /**
  * SaberCore - Developed by Driftay.
  * All rights reserved 2020.

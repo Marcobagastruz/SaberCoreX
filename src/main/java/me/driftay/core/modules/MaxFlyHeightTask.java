@@ -3,7 +3,6 @@ package me.driftay.core.modules;
 import me.driftay.core.SaberCore;
 import me.driftay.core.utils.StringUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent;
@@ -31,7 +30,7 @@ public class MaxFlyHeightTask extends BukkitRunnable {
                 if (p.getLocation().getY() >= 0.0 || !p.isFlying() || p.isOp()) continue;
                 p.setFlying(false);
                 p.setAllowFlight(false);
-                if(SaberCore.getInstance().getConfig().getBoolean("settings.max-fly-height.damage-player")) {
+                if (SaberCore.getInstance().getConfig().getBoolean("settings.max-fly-height.damage-player")) {
                     p.damage(1.0);
                 }
             }

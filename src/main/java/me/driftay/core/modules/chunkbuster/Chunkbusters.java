@@ -58,6 +58,28 @@ public class Chunkbusters extends SaberPlugin {
         this.unregisterCommands();
     }
 
+    public HashSet<Chunk> getWaterChunks() {
+        return waterChunks;
+    }
+
+    @EventHandler
+    public void onWaterFlow(BlockFromToEvent e) {
+        if (Bukkit.getVersion().contains("1.13")) {
+            if (e.getBlock().getType().equals(Material.WATER) || e.getBlock().getType().equals(Material.LAVA)) {
+                if (!getWaterChunks().contains(e.getBlock().getChunk()) && getWaterChunks().contains(e.getToBlock().getChunk())) {
+                    e.setCancelled(true);
+                }
+            }
+        } else {
+            if (e.getBlock().getType().equals(Material.WATER) || e.getBlock().getType().equals(Material.valueOf("STATIONARY_WATER"))
+                    || e.getBlock().getType().equals(Material.LAVA) || e.getBlock().getType().equals(Material.valueOf("STATIONARY_LAVA"))) {
+                if (!getWaterChunks().contains(e.getBlock().getChunk()) && getWaterChunks().contains(e.getToBlock().getChunk())) {
+                    e.setCancelled(true);
+                }
+            }
+        }
+    }
+
     static class ChunkbustersListener extends SaberPluginListener<Chunkbusters> {
 
         public ChunkbustersListener(Chunkbusters patch) {
@@ -199,61 +221,38 @@ public class Chunkbusters extends SaberPlugin {
         }
     }
 
-        static class CommandChunkbusters extends SaberPluginCommand<Chunkbusters> {
+    static class CommandChunkbusters extends SaberPluginCommand<Chunkbusters> {
 
-            public CommandChunkbusters(Chunkbusters patch) {
-                super(patch, "chunkbuster");
-            }
+        public CommandChunkbusters(Chunkbusters patch) {
+            super(patch, "chunkbuster");
+        }
 
-            @Override
-            public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-                if (args.length == 3) {
-                    if (args[0].equalsIgnoreCase("give")) {
-                        if (!sender.hasPermission("sabercore.chunkbusters.give")) {
-                            sender.sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("general.no-permission")));
+        @Override
+        public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+            if (args.length == 3) {
+                if (args[0].equalsIgnoreCase("give")) {
+                    if (!sender.hasPermission("sabercore.chunkbusters.give")) {
+                        sender.sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("general.no-permission")));
+                        return true;
+                    }
+                    if (Bukkit.getPlayer(args[1]) == null || !Bukkit.getPlayer(args[1]).isOnline()) {
+                        sender.sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("general.player-not-found")).replace("{player}", args[1]));
+                        return true;
+                    }
+                    int amount = Integer.parseInt(args[2]);
+                    if (amount >= 1) {
+                        if (Bukkit.getServer().getPlayer(args[1]).isOnline()) {
+                            Bukkit.getServer().getPlayer(args[1]).getInventory().addItem(ItemCreation.giveChunkBuster(amount));
+                            Bukkit.getServer().getPlayer(args[1]).sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("chunkbuster.received")));
                             return true;
                         }
-                        if (Bukkit.getPlayer(args[1]) == null || !Bukkit.getPlayer(args[1]).isOnline()) {
-                            sender.sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("general.player-not-found")).replace("{player}", args[1]));
-                            return true;
-                        }
-                        int amount = Integer.parseInt(args[2]);
-                        if (amount >= 1) {
-                            if (Bukkit.getServer().getPlayer(args[1]).isOnline()) {
-                                Bukkit.getServer().getPlayer(args[1]).getInventory().addItem(ItemCreation.giveChunkBuster(amount));
-                                Bukkit.getServer().getPlayer(args[1]).sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("chunkbuster.received")));
-                                return true;
-                            }
-                        }
                     }
-                } else if (sender.hasPermission("sabercore.chunkbusters.give")) {
-                    sender.sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("chunkbuster.command-usage")));
                 }
-                return false;
+            } else if (sender.hasPermission("sabercore.chunkbusters.give")) {
+                sender.sendMessage(translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("chunkbuster.command-usage")));
             }
+            return false;
         }
-
-
-        public HashSet<Chunk> getWaterChunks() {
-            return waterChunks;
-        }
-
-        @EventHandler
-        public void onWaterFlow(BlockFromToEvent e) {
-            if (Bukkit.getVersion().contains("1.13")) {
-                if (e.getBlock().getType().equals(Material.WATER) || e.getBlock().getType().equals(Material.LAVA)) {
-                    if (!getWaterChunks().contains(e.getBlock().getChunk()) && getWaterChunks().contains(e.getToBlock().getChunk())) {
-                        e.setCancelled(true);
-                    }
-                }
-            } else {
-                if (e.getBlock().getType().equals(Material.WATER) || e.getBlock().getType().equals(Material.valueOf("STATIONARY_WATER"))
-                        || e.getBlock().getType().equals(Material.LAVA) || e.getBlock().getType().equals(Material.valueOf("STATIONARY_LAVA"))) {
-                    if (!getWaterChunks().contains(e.getBlock().getChunk()) && getWaterChunks().contains(e.getToBlock().getChunk())) {
-                        e.setCancelled(true);
-                    }
-                }
-            }
-        }
+    }
 
 }

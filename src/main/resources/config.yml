@@ -80,8 +80,14 @@ modules:
   #Denies Users To Specific Commands
   disabled_commands: true
 
+  #Enable's Harvester Hoes
+  harvesterhoes: true
+
   #Instantly Breaks Sponges When Swung At
   insta_sponge_break: true
+
+  #Enable and Disable Fall Damage
+  jellylegs: true
 
   #Limit Players Fly Height on the Y-Axis
   max_fly_height: true
@@ -89,8 +95,14 @@ modules:
   #Enabled a enhanced Trench-Tool System
   shockwaves: true
 
+  #Enable and Disable Night Vision
+  nightvision: true
+
   #Disable Dropping Of Items When In Cursor In Inventory
   no_cursor_drop: true
+
+  #Show Ping Values To The Server
+  ping: true
 
   #Soak Water/Lava Up With Sponges In a Configurable Radius
   soak_sponges: true
@@ -100,9 +112,22 @@ modules:
 
 
 settings:
+
   sponge-radius: 3
 
   anti-spawner-mine-radius: 80
+
+  harvester-hoe:
+    sugar-cane-price: 0.5
+    autosell: false
+    item:
+      displayname: '&a&lHarvester Hoe'
+      lore:
+        - '&f'
+        - '&7&o(( Tip: When Mining &a&oSugar Cane&7&o will &f&oautomatically'
+        - '&7&oplace it &f&odirectly &7&ointo your &a&oinventory!'
+        - '&f'
+        - '&4&l* &cObtained from: &fstore.mystore.com'
 
   chunkbuster:
     async-mode: false #Will Destroy Layer By Layer if Enabled.

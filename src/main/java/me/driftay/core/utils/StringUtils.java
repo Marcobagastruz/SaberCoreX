@@ -3,7 +3,10 @@ package me.driftay.core.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +28,22 @@ public class StringUtils {
             colored.add(translate(line));
         }
         return colored;
+    }
+
+    public static int getPing(Player p) {
+        String bpName = Bukkit.getServer().getClass().getPackage().getName();
+        String version = bpName.substring(bpName.lastIndexOf(".") + 1);
+        try {
+            Class<?> CPClass = Class.forName("org.bukkit.craftbukkit." + version + ".entity.CraftPlayer");
+            Object CraftPlayer = CPClass.cast(p);
+            Method getHandle = CraftPlayer.getClass().getMethod("getHandle");
+            Object EntityPlayer = getHandle.invoke(CraftPlayer);
+            Field ping = EntityPlayer.getClass().getDeclaredField("ping");
+            return ping.getInt(EntityPlayer);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
     public static List<String> translateWithPlaceholders(List<String> string, Placeholder... placeholders) {

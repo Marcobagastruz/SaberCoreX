@@ -121,7 +121,7 @@ public class Shockwave extends SaberPlugin {
                         if (fac.isWilderness() || fac.getId().equals(UUIDfac.getId())) {
                             p.getInventory().addItem(new ItemStack(loc.getBlock().getType()));
                             loc.getBlock().setType(Material.AIR);
-                            if(Bukkit.getPluginManager().getPlugin("CoreProtect") != null) {
+                            if (Bukkit.getPluginManager().getPlugin("CoreProtect") != null) {
                                 if (SaberCore.getInstance().getFileManager().getConfig().fetchBoolean("settings.shockwave.log-core-protect")) {
                                     CoreProtect.getInstance().getAPI().logRemoval(p.getName(), loc, loc.getBlock().getType(), loc.getBlock().getData());
                                 }
@@ -201,4 +201,4 @@ public class Shockwave extends SaberPlugin {
     }
 
 
-    }
+}

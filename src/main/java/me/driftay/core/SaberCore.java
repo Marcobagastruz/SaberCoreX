@@ -11,9 +11,9 @@ import me.driftay.core.hooks.impl.WorldGuardHook;
 import me.driftay.core.modules.chat_filter.ChatHandler;
 import me.driftay.core.plugins.SaberPlugin;
 import me.driftay.core.plugins.SaberPlugins;
+import me.driftay.core.utils.EconomyUtils;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -28,14 +28,18 @@ import java.util.List;
 public class SaberCore extends JavaPlugin {
 
     public static SaberCore instance;
-    public boolean shutting_down = false;
     private static Economy economy = null;
+    public boolean shutting_down = false;
     private FileManager fileManager;
     private ChatHandler chatHandler;
     private HashMap<String, SaberPlugin> loaded_modules = new HashMap<>();
 
     public static SaberCore getInstance() {
         return instance;
+    }
+
+    public static Economy getEconomy() {
+        return economy;
     }
 
     public FileManager getFileManager() {
@@ -47,8 +51,8 @@ public class SaberCore extends JavaPlugin {
         fileManager = new FileManager();
         getFileManager().setupFiles();
         chatHandler = new ChatHandler();
-        setupEconomy();
         registerCommands();
+        EconomyUtils.register();
         List<PluginHook<?>> hooks = new ArrayList<>();
         hooks.add(new FactionHook());
         if (Bukkit.getPluginManager().getPlugin("WorldGuard") != null) {
@@ -64,7 +68,7 @@ public class SaberCore extends JavaPlugin {
         this.unregisterPatches();
     }
 
-    private void registerCommands(){
+    private void registerCommands() {
         getCommand("saberload").setExecutor(new CommandSaberReload(this));
         getCommand("saberregister").setExecutor(new CommandSaberRegister(this));
         getCommand("saberunregister").setExecutor(new CommandSaberUnregister(this));
@@ -112,14 +116,4 @@ public class SaberCore extends JavaPlugin {
         return chatHandler;
     }
 
-    public static Economy getEconomy(){
-        return economy;
-    }
-
-
-    private boolean setupEconomy(){
-        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
-        if (economyProvider != null) economy = economyProvider.getProvider();
-        return (economy != null);
-    }
 }

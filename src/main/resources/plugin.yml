@@ -18,6 +18,14 @@ commands:
     aliases: [saberload, sload]
 
 permissions:
+  sabercore.harvester.give:
+    description: Ability to give users harvester hoes
+  sabercore.ping.other:
+    description: Ability to see other players ping
+  sabercore.jellylegs:
+    description: Ability to toggle on and off jelly legs
+  sabercore.nightvision:
+    description: Ability to toggle on and off nightvision
   sabercore.shockwave.give:
     description: Ability to grant players shockwaves
   sabercore.chunkbusters.give:

@@ -18,6 +18,21 @@ import static me.driftay.core.utils.StringUtils.translate;
 public class ItemCreation {
 
 
+    public static ItemStack giveHarvesterHoe(int amount) {
+        ItemStack harvesterItem = new ItemStack(XMaterial.DIAMOND_HOE.parseMaterial());
+        ItemMeta meta = harvesterItem.getItemMeta();
+        meta.setDisplayName(translate(SaberCore.getInstance().getFileManager().getConfig().fetchString("settings.harvester-hoe.item.displayname")));
+        List<String> lore = new ArrayList<>();
+        for (String s : SaberCore.getInstance().getFileManager().getConfig().fetchStringList("settings.harvester-hoe.item.lore")) {
+            lore.add(translate(s));
+        }
+        meta.setLore(lore);
+        harvesterItem.setAmount(amount);
+        harvesterItem.setItemMeta(meta);
+        return harvesterItem;
+    }
+
+
     public static ItemStack giveChunkBuster(int amount) {
         ItemStack busterItem = new ItemStack(XMaterial.END_PORTAL_FRAME.parseMaterial());
         ItemMeta meta = busterItem.getItemMeta();

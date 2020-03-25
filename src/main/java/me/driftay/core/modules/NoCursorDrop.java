@@ -39,7 +39,7 @@ public class NoCursorDrop extends SaberPlugin {
 
         @EventHandler(priority = EventPriority.MONITOR)
         public void onInventoryClose(InventoryCloseEvent e) {
-            Player player = (Player)e.getPlayer();
+            Player player = (Player) e.getPlayer();
             if (player.getItemOnCursor() != null && player.getInventory().firstEmpty() != -1 && !player.isDead() && player.getHealth() > 0.0) {
                 ItemStack i = player.getItemOnCursor().clone();
                 player.setItemOnCursor(null);
