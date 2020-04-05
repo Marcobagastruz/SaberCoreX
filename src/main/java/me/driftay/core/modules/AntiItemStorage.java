@@ -57,7 +57,7 @@ public class AntiItemStorage extends SaberPlugin {
             if (e.getClick().isShiftClick()) {
                 if (clicked == e.getWhoClicked().getInventory()) {
                     ItemStack clickedOn = e.getCurrentItem();
-                    if (clickedOn != null && itemList.contains(XMaterial.matchXMaterial(clickedOn.getType().toString()))) {
+                    if (clickedOn != null && itemList.contains(XMaterial.matchXMaterial(clickedOn.getType().toString()).get().parseItem())) {
                         player.sendMessage(StringUtils.translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("cannot-store-item").replace("{item}", clickedOn.getType().toString())));
                         e.setCancelled(true);
                     }
@@ -66,7 +66,7 @@ public class AntiItemStorage extends SaberPlugin {
 
             if (clicked != e.getWhoClicked().getInventory()) {
                 ItemStack onCursor = e.getCursor();
-                if (onCursor != null && itemList.contains(XMaterial.matchXMaterial(onCursor.getType().toString()))) {
+                if (onCursor != null && itemList.contains(XMaterial.matchXMaterial(onCursor.getType().toString()).get().parseItem())) {
                     player.sendMessage(StringUtils.translate(SaberCore.getInstance().getFileManager().getMessages().fetchString("cannot-store-item").replace("{item}", onCursor.getType().toString())));
                     e.setCancelled(true);
                 }
@@ -80,7 +80,7 @@ public class AntiItemStorage extends SaberPlugin {
             if (e.isCancelled()) return;
 
             ItemStack dragged = e.getOldCursor();
-            if (itemList.contains(XMaterial.matchXMaterial(dragged.getType().toString()))) {
+            if (itemList.contains(XMaterial.matchXMaterial(dragged.getType().toString()).get().parseItem())) {
                 int inventorySize = e.getInventory().getSize();
                 for (int i : e.getRawSlots()) {
                     if (i < inventorySize) {
@@ -95,7 +95,7 @@ public class AntiItemStorage extends SaberPlugin {
         @EventHandler
         public void onHopperMoveEvent(InventoryMoveItemEvent e) {
             if (e.isCancelled()) return;
-            if (itemList.contains(XMaterial.matchXMaterial(e.getItem().getType().toString()))) {
+            if (itemList.contains(XMaterial.matchXMaterial(e.getItem().getType().toString()).get().parseItem())) {
                 e.setCancelled(true);
             }
         }
