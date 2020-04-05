@@ -25,5 +25,7 @@ public class FileManager {
         return messages;
     }
 
-    public CustomFile getConfig() {return config;}
+    public CustomFile getConfig() {
+        return config;
+    }
 }
