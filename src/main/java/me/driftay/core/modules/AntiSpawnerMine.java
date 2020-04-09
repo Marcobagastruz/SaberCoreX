@@ -61,7 +61,7 @@ public class AntiSpawnerMine extends SaberPlugin {
             for (Entity entity : nearbyEntities) {
                 if ((entity instanceof Player) && (str == null || entity.hasPermission(str))) {
                     FPlayer byPlayer2 = FPlayers.getInstance().getByPlayer((Player) entity);
-                    if (!(byPlayer2.getFactionId().equals(byPlayer.getFactionId()) || byPlayer2.getFaction().getRelationWish(byPlayer.getFaction()).isAlly())) {
+                    if (!(byPlayer2.getFactionId().equals(byPlayer.getFactionId()) || byPlayer2.getFaction().getRelationTo(byPlayer.getFaction()).isTruce() || byPlayer2.getFaction().getRelationTo(byPlayer.getFaction()).isAlly())) {
                         return true;
                     }
                 }
