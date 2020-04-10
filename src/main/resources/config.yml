@@ -36,7 +36,7 @@ modules:
   anti_explosion_damage: true
 
   #Deny Items From Being Exploded/Burned
-  anti_item_destory: true
+  anti_item_destroy: true
 
   #Deny Certain Items From Being Stored Anywhere
   anti_item_storage: false
