@@ -104,9 +104,6 @@ public class ArmorSwap extends SaberPlugin {
             e.setUseItemInHand(Event.Result.DENY);
             p.setMetadata("lastArmorSwap", new FixedMetadataValue(SaberCore.getInstance(), System.currentTimeMillis()));
             this.equipArmor(p, e.getItem());
-            if (SaberCore.getInstance().getConfig().getBoolean("settings.armor-swap.play-sound")) {
-                p.playSound(p.getLocation(), String.valueOf(XSound.matchXSound(SaberCore.getInstance().getConfig().getString("settings.armor-swap.sound"))), 1.0f, 0.8f);
-            }
         }
     }
 }

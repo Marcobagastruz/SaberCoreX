@@ -156,8 +156,6 @@ settings:
 
   armor-swap:
     cooldown: 500 #This is in Milliseconds - 500 = .5 seconds
-    play-sound: true
-    sound: 'LEVEL_UP'
 
   max-fly-height:
     limit: 255.5
